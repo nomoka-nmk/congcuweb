@@ -23,36 +23,19 @@
 </head>
 <body class="bg-gray-50 min-h-screen">
     <div class="container mx-auto py-8">
-        <header class="mb-8 text-center">
-            <h1 class="text-3xl font-bold text-gray-800">Markdown Viewer</h1>
-            <p class="text-gray-600 mt-2">Xem nội dung file Markdown từ URL</p>
-        </header>
-
-        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
-            <form id="urlForm" class="flex gap-4">
-                <input 
-                    type="text" 
-                    id="urlInput" 
-                    placeholder="Nhập URL file Markdown..." 
-                    class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    required
-                >
-                <button 
-                    type="submit" 
-                    class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                    Xem
-                </button>
-            </form>
-        </div>
-
-        <div id="loading" class="text-center hidden">
+        <div id="loading" class="text-center">
             <div class="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500 mb-2"></div>
-            <p>Đang tải file...</p>
+            <p>Đang tải...</p>
         </div>
 
         <div id="error" class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-8 hidden" role="alert">
             <p id="errorMessage"></p>
+        </div>
+
+        <div id="guide" class="bg-white rounded-lg shadow-md p-6 mb-8 text-center hidden">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Hướng dẫn sử dụng</h2>
+            <p class="text-gray-600 mb-4">Thêm tham số <code class="bg-gray-100 px-2 py-1 rounded">?url=</code> vào địa chỉ trang web</p>
+            <p class="text-gray-600">Ví dụ: <code class="bg-gray-100 px-2 py-1 rounded">?url=https://raw.githubusercontent.com/username/repo/main/README.md</code></p>
         </div>
 
         <div id="markdownContainer" class="markdown-body hidden">
@@ -77,20 +60,12 @@
             const url = params.get('url');
             
             if (url) {
-                document.getElementById('urlInput').value = url;
                 loadMarkdown(url);
+            } else {
+                // Hiển thị hướng dẫn nếu không có URL
+                document.getElementById('loading').classList.add('hidden');
+                document.getElementById('guide').classList.remove('hidden');
             }
-            
-            // Xử lý form
-            document.getElementById('urlForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                const url = document.getElementById('urlInput').value.trim();
-                if (url) {
-                    // Cập nhật URL trình duyệt
-                    window.history.pushState({}, '', `?url=${encodeURIComponent(url)}`);
-                    loadMarkdown(url);
-                }
-            });
         });
 
         // Hàm tải markdown
@@ -100,11 +75,7 @@
             const errorMessage = document.getElementById('errorMessage');
             const markdownContainer = document.getElementById('markdownContainer');
             const markdownContent = document.getElementById('markdownContent');
-            
-            // Reset UI
-            loading.classList.remove('hidden');
-            error.classList.add('hidden');
-            markdownContainer.classList.add('hidden');
+            const guide = document.getElementById('guide');
             
             try {
                 const response = await fetch(url);
@@ -115,9 +86,11 @@
                 const text = await response.text();
                 markdownContent.innerHTML = marked.parse(text);
                 markdownContainer.classList.remove('hidden');
+                guide.classList.add('hidden');
             } catch (err) {
-                errorMessage.textContent = `Không thể tải file: ${err.message}`;
+                errorMessage.textContent = `Không thể tải file từ URL: ${err.message}`;
                 error.classList.remove('hidden');
+                guide.classList.remove('hidden');
             } finally {
                 loading.classList.add('hidden');
             }
