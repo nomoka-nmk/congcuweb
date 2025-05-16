@@ -69,15 +69,15 @@
 			background: #f8f8f8;
 			border-radius: 0.5rem;
 			overflow: hidden;
-			border: 1px solid #e2e8f0; /* Thêm viền để làm nổi bật */
-			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Bóng nhẹ */
+			border: 1px solid #e2e8f0;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 		}
 		.code-block pre {
 			margin: 0;
 			padding: 1rem;
-			overflow-x: auto;
-			scrollbar-width: thin; /* Thanh cuộn mỏng */
-			scrollbar-color: #a0aec0 #f8f8f8; /* Màu thanh cuộn */
+			white-space: pre-wrap; /* Cho phép xuống dòng, giữ định dạng mã */
+			overflow-wrap: break-word; /* Ngắt từ dài nếu cần */
+			overflow-x: hidden; /* Ẩn thanh cuộn ngang */
 		}
 		.code-block pre::-webkit-scrollbar {
 			height: 8px;
@@ -88,6 +88,11 @@
 		}
 		.code-block pre::-webkit-scrollbar-track {
 			background: #f8f8f8;
+		}
+		.code-block pre code {
+			display: block;
+			white-space: inherit; /* Kế thừa white-space từ pre */
+			overflow-wrap: inherit; /* Kế thừa overflow-wrap từ pre */
 		}
 		.code-header {
 			display: flex;
