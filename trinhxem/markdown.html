@@ -6,38 +6,36 @@
     <title>Markdown Viewer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/core.min.js"></script>
-    <!-- Load tất cả các ngôn ngữ phổ biến -->
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/javascript.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/python.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/java.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/cpp.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/c.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/csharp.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/pascal.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/rust.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/ruby.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/bash.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/php.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/go.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/swift.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/kotlin.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/typescript.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/sql.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/html.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/css.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/json.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/xml.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/markdown.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/yaml.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/dart.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/lua.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/perl.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/r.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/scala.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/lib/languages/shell.min.js"></script>
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/github.min.css">
+    <!-- Load highlight.js core and ALL languages in a single file -->
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/javascript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/python.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/java.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/cpp.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/c.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/csharp.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/rust.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/ruby.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/bash.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/php.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/go.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/swift.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/kotlin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/typescript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/sql.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/css.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/xml.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/markdown.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/yaml.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/dart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/lua.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/perl.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/r.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/scala.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/shell.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/github.min.css">
     <style>
         .markdown-body {
             max-width: 800px;
@@ -109,54 +107,57 @@
     </div>
 
     <script>
-        // Đăng ký tất cả các ngôn ngữ
-        hljs.registerLanguage('javascript', hljs.javascript);
-        hljs.registerLanguage('python', hljs.python);
-        hljs.registerLanguage('java', hljs.java);
-        hljs.registerLanguage('cpp', hljs.cpp);
-        hljs.registerLanguage('c', hljs.c);
-        hljs.registerLanguage('csharp', hljs.csharp);
-        hljs.registerLanguage('pascal', hljs.pascal);
-        hljs.registerLanguage('rust', hljs.rust);
-        hljs.registerLanguage('ruby', hljs.ruby);
-        hljs.registerLanguage('bash', hljs.bash);
-        hljs.registerLanguage('php', hljs.php);
-        hljs.registerLanguage('go', hljs.go);
-        hljs.registerLanguage('swift', hljs.swift);
-        hljs.registerLanguage('kotlin', hljs.kotlin);
-        hljs.registerLanguage('typescript', hljs.typescript);
-        hljs.registerLanguage('sql', hljs.sql);
-        hljs.registerLanguage('html', hljs.html);
-        hljs.registerLanguage('css', hljs.css);
-        hljs.registerLanguage('json', hljs.json);
-        hljs.registerLanguage('xml', hljs.xml);
-        hljs.registerLanguage('markdown', hljs.markdown);
-        hljs.registerLanguage('yaml', hljs.yaml);
-        hljs.registerLanguage('dart', hljs.dart);
-        hljs.registerLanguage('lua', hljs.lua);
-        hljs.registerLanguage('perl', hljs.perl);
-        hljs.registerLanguage('r', hljs.r);
-        hljs.registerLanguage('scala', hljs.scala);
-        hljs.registerLanguage('shell', hljs.shell);
+        // Wait for all scripts to load
+        function initHighlightJS() {
+            // Register all languages
+            hljs.registerLanguage('javascript', hljs.javascript);
+            hljs.registerLanguage('python', hljs.python);
+            hljs.registerLanguage('java', hljs.java);
+            hljs.registerLanguage('cpp', hljs.cpp);
+            hljs.registerLanguage('c', hljs.c);
+            hljs.registerLanguage('csharp', hljs.csharp);
+            hljs.registerLanguage('rust', hljs.rust);
+            hljs.registerLanguage('ruby', hljs.ruby);
+            hljs.registerLanguage('bash', hljs.bash);
+            hljs.registerLanguage('php', hljs.php);
+            hljs.registerLanguage('go', hljs.go);
+            hljs.registerLanguage('swift', hljs.swift);
+            hljs.registerLanguage('kotlin', hljs.kotlin);
+            hljs.registerLanguage('typescript', hljs.typescript);
+            hljs.registerLanguage('sql', hljs.sql);
+            hljs.registerLanguage('css', hljs.css);
+            hljs.registerLanguage('xml', hljs.xml);
+            hljs.registerLanguage('markdown', hljs.markdown);
+            hljs.registerLanguage('yaml', hljs.yaml);
+            hljs.registerLanguage('dart', hljs.dart);
+            hljs.registerLanguage('lua', hljs.lua);
+            hljs.registerLanguage('perl', hljs.perl);
+            hljs.registerLanguage('r', hljs.r);
+            hljs.registerLanguage('scala', hljs.scala);
+            hljs.registerLanguage('shell', hljs.shell);
 
-        // Cấu hình marked
-        marked.setOptions({
-            breaks: true,
-            highlight: function(code, lang) {
-                const language = hljs.getLanguage(lang) ? lang : 'plaintext';
-                return hljs.highlight(code, { language }).value;
-            },
-            langPrefix: 'hljs language-'
-        });
+            // Configure marked
+            marked.setOptions({
+                breaks: true,
+                highlight: function(code, lang) {
+                    const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+                    return hljs.highlight(code, { language }).value;
+                },
+                langPrefix: 'hljs language-'
+            });
 
-        // Hàm thêm header và nút copy vào các khung code
+            // Start the application
+            startApp();
+        }
+
+        // Function to enhance code blocks
         function enhanceCodeBlocks() {
             document.querySelectorAll('pre code').forEach(block => {
                 const pre = block.parentElement;
                 const wrapper = document.createElement('div');
                 wrapper.className = 'code-block';
                 
-                // Lấy tên ngôn ngữ từ class
+                // Get language from class
                 let lang = '';
                 Array.from(block.classList).forEach(cls => {
                     if (cls.startsWith('language-')) {
@@ -165,7 +166,7 @@
                 });
                 if (!lang) lang = 'text';
                 
-                // Tạo header
+                // Create header
                 const header = document.createElement('div');
                 header.className = 'code-header';
                 header.innerHTML = `
@@ -173,7 +174,7 @@
                     <button class="copy-btn">Copy</button>
                 `;
                 
-                // Thêm sự kiện copy
+                // Add copy event
                 const copyBtn = header.querySelector('.copy-btn');
                 copyBtn.addEventListener('click', () => {
                     navigator.clipboard.writeText(block.textContent).then(() => {
@@ -186,18 +187,18 @@
                     });
                 });
                 
-                // Gắn các phần tử vào DOM
+                // Assemble DOM elements
                 pre.parentNode.insertBefore(wrapper, pre);
                 wrapper.appendChild(header);
                 wrapper.appendChild(pre);
                 
-                // Highlight lại code
+                // Highlight the code
                 hljs.highlightElement(block);
             });
         }
 
-        // Xử lý khi trang load
-        document.addEventListener('DOMContentLoaded', function() {
+        // Main application function
+        function startApp() {
             const params = new URLSearchParams(window.location.search);
             const url = params.get('url');
             
@@ -207,9 +208,9 @@
                 document.getElementById('loading').classList.add('hidden');
                 document.getElementById('guide').classList.remove('hidden');
             }
-        });
+        }
 
-        // Hàm tải markdown
+        // Function to load markdown
         async function loadMarkdown(url) {
             const loading = document.getElementById('loading');
             const error = document.getElementById('error');
@@ -225,7 +226,7 @@
                 const text = await response.text();
                 markdownContent.innerHTML = marked.parse(text);
                 
-                // Nâng cấp các khối code
+                // Enhance code blocks
                 enhanceCodeBlocks();
                 
                 markdownContainer.classList.remove('hidden');
@@ -237,6 +238,13 @@
             } finally {
                 loading.classList.add('hidden');
             }
+        }
+
+        // Initialize when all scripts are loaded
+        if (typeof hljs !== 'undefined' && typeof marked !== 'undefined') {
+            initHighlightJS();
+        } else {
+            window.addEventListener('load', initHighlightJS);
         }
     </script>
 </body>
