@@ -6,83 +6,177 @@
     <title>Markdown Viewer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    
-    <!-- Load highlight.js core and ALL languages in a single file -->
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/highlight.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/javascript.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/python.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/java.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/cpp.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/c.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/csharp.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/rust.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/ruby.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/bash.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/php.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/go.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/swift.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/kotlin.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/typescript.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/sql.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/css.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/python.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/pascal.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/javascript.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/java.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/xml.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/markdown.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/yaml.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/dart.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/lua.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/perl.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/r.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/scala.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/shell.min.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/php.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/languages/css.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.7.0/build/styles/github.min.css">
-    <style>
-        .markdown-body {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        .code-block {
-            position: relative;
-            margin: 1rem 0;
-            background: #f8f8f8;
-            border-radius: 0.5rem;
-            overflow: hidden;
-        }
-        .code-block pre {
-            margin: 0;
-            padding: 1rem;
-            overflow-x: auto;
-        }
-        .code-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.25rem 0.5rem;
-            background: #e2e8f0;
-            color: #4a5568;
-            font-family: monospace;
-            font-size: 0.8rem;
-        }
-        .copy-btn {
-            background: #cbd5e1;
-            border: none;
-            border-radius: 0.25rem;
-            padding: 0.25rem 0.5rem;
-            cursor: pointer;
-            font-size: 0.75rem;
-            transition: all 0.2s;
-        }
-        .copy-btn:hover {
-            background: #a0aec0;
-        }
-        .copy-btn.copied {
-            background: #68d391;
-        }
-        .language-name {
-            font-weight: bold;
-        }
-    </style>
+	<style>
+		.markdown-body {
+			width: 90vw;
+			max-width: 1280px; /* Giới hạn chiều rộng tối đa */
+			margin: 0 auto;
+			padding: 2rem; /* Padding đồng đều */
+			box-sizing: border-box;
+		}
+		.markdown-body > * {
+			width: 100%;
+			max-width: 100%;
+			margin-left: 0;
+			margin-right: 0;
+			text-align: left;
+		}
+		.markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body h6 {
+			font-weight: 600;
+			line-height: 1.25;
+			margin-bottom: 1rem;
+			margin-top: 1.5rem;
+			color: #1a202c;
+		}
+		.markdown-body h1 {
+			font-size: 2rem;
+			border-bottom: 1px solid #e2e8f0;
+			padding-bottom: 0.3rem;
+		}
+		.markdown-body h2 {
+			font-size: 1.5rem;
+			border-bottom: 1px solid #e2e8f0;
+			padding-bottom: 0.2rem;
+		}
+		.markdown-body h3 {
+			font-size: 1.25rem;
+		}
+		.markdown-body h4 {
+			font-size: 1rem;
+		}
+		.markdown-body h5 {
+			font-size: 0.875rem;
+		}
+		.markdown-body h6 {
+			font-size: 0.75rem;
+			color: #4a5568;
+		}
+		.code-block {
+			position: relative;
+			margin: 1rem 0;
+			background: #f8f8f8;
+			border-radius: 0.5rem;
+			overflow: hidden;
+			border: 1px solid #e2e8f0; /* Thêm viền để làm nổi bật */
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Bóng nhẹ */
+		}
+		.code-block pre {
+			margin: 0;
+			padding: 1rem;
+			overflow-x: auto;
+			scrollbar-width: thin; /* Thanh cuộn mỏng */
+			scrollbar-color: #a0aec0 #f8f8f8; /* Màu thanh cuộn */
+		}
+		.code-block pre::-webkit-scrollbar {
+			height: 8px;
+		}
+		.code-block pre::-webkit-scrollbar-thumb {
+			background: #a0aec0;
+			border-radius: 4px;
+		}
+		.code-block pre::-webkit-scrollbar-track {
+			background: #f8f8f8;
+		}
+		.code-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 0.25rem 0.5rem;
+			background: #e2e8f0;
+			color: #4a5568;
+			font-family: monospace;
+			font-size: 0.8rem;
+		}
+		.copy-btn {
+			background: #cbd5e1;
+			border: none;
+			border-radius: 0.25rem;
+			padding: 0.25rem 0.5rem;
+			cursor: pointer;
+			font-size: 0.75rem;
+			transition: all 0.3s ease; /* Hiệu ứng mượt mà */
+			position: relative;
+		}
+		.copy-btn:hover {
+			background: #a0aec0;
+		}
+		.copy-btn.copied {
+			background: #68d391;
+		}
+		.copy-btn.copied::after {
+			content: 'Copied!';
+			position: absolute;
+			top: -2rem;
+			right: 0;
+			background: #68d391;
+			color: white;
+			padding: 0.25rem 0.5rem;
+			border-radius: 0.25rem;
+			font-size: 0.75rem;
+			opacity: 0;
+			animation: fadeInOut 2s forwards;
+		}
+		@keyframes fadeInOut {
+			0% { opacity: 0; transform: translateY(0); }
+			10% { opacity: 1; transform: translateY(-0.5rem); }
+			90% { opacity: 1; transform: translateY(-0.5rem); }
+			100% { opacity: 0; transform: translateY(0); }
+		}
+		.language-name {
+			font-weight: bold;
+		}
+
+		/* Responsive design */
+		@media (max-width: 768px) {
+			.markdown-body {
+				padding: 1rem;
+			}
+			.markdown-body h1 {
+				font-size: 1.5rem;
+			}
+			.markdown-body h2 {
+				font-size: 1.25rem;
+			}
+			.markdown-body h3 {
+				font-size: 1rem;
+			}
+			.code-block pre {
+				padding: 0.75rem;
+			}
+			.code-header {
+				font-size: 0.7rem;
+			}
+			.copy-btn {
+				padding: 0.2rem 0.4rem;
+				font-size: 0.7rem;
+			}
+		}
+
+		/* Căn chỉnh thông báo */
+		#loading, #error, #guide {
+			max-width: 1280px;
+			margin: 0 auto 1rem;
+			text-align: center;
+		}
+		#error {
+			border-radius: 0.5rem;
+		}
+		#guide {
+			margin-bottom: 2rem;
+		}
+	</style>
 </head>
 <body class="bg-gray-50 min-h-screen">
     <div class="container mx-auto py-8">
@@ -107,36 +201,7 @@
     </div>
 
     <script>
-        // Wait for all scripts to load
         function initHighlightJS() {
-            // Register all languages
-            hljs.registerLanguage('javascript', hljs.javascript);
-            hljs.registerLanguage('python', hljs.python);
-            hljs.registerLanguage('java', hljs.java);
-            hljs.registerLanguage('cpp', hljs.cpp);
-            hljs.registerLanguage('c', hljs.c);
-            hljs.registerLanguage('csharp', hljs.csharp);
-            hljs.registerLanguage('rust', hljs.rust);
-            hljs.registerLanguage('ruby', hljs.ruby);
-            hljs.registerLanguage('bash', hljs.bash);
-            hljs.registerLanguage('php', hljs.php);
-            hljs.registerLanguage('go', hljs.go);
-            hljs.registerLanguage('swift', hljs.swift);
-            hljs.registerLanguage('kotlin', hljs.kotlin);
-            hljs.registerLanguage('typescript', hljs.typescript);
-            hljs.registerLanguage('sql', hljs.sql);
-            hljs.registerLanguage('css', hljs.css);
-            hljs.registerLanguage('xml', hljs.xml);
-            hljs.registerLanguage('markdown', hljs.markdown);
-            hljs.registerLanguage('yaml', hljs.yaml);
-            hljs.registerLanguage('dart', hljs.dart);
-            hljs.registerLanguage('lua', hljs.lua);
-            hljs.registerLanguage('perl', hljs.perl);
-            hljs.registerLanguage('r', hljs.r);
-            hljs.registerLanguage('scala', hljs.scala);
-            hljs.registerLanguage('shell', hljs.shell);
-
-            // Configure marked
             marked.setOptions({
                 breaks: true,
                 highlight: function(code, lang) {
@@ -146,18 +211,15 @@
                 langPrefix: 'hljs language-'
             });
 
-            // Start the application
             startApp();
         }
 
-        // Function to enhance code blocks
         function enhanceCodeBlocks() {
             document.querySelectorAll('pre code').forEach(block => {
                 const pre = block.parentElement;
                 const wrapper = document.createElement('div');
                 wrapper.className = 'code-block';
                 
-                // Get language from class
                 let lang = '';
                 Array.from(block.classList).forEach(cls => {
                     if (cls.startsWith('language-')) {
@@ -166,7 +228,6 @@
                 });
                 if (!lang) lang = 'text';
                 
-                // Create header
                 const header = document.createElement('div');
                 header.className = 'code-header';
                 header.innerHTML = `
@@ -174,7 +235,6 @@
                     <button class="copy-btn">Copy</button>
                 `;
                 
-                // Add copy event
                 const copyBtn = header.querySelector('.copy-btn');
                 copyBtn.addEventListener('click', () => {
                     navigator.clipboard.writeText(block.textContent).then(() => {
@@ -187,17 +247,14 @@
                     });
                 });
                 
-                // Assemble DOM elements
                 pre.parentNode.insertBefore(wrapper, pre);
                 wrapper.appendChild(header);
                 wrapper.appendChild(pre);
                 
-                // Highlight the code
                 hljs.highlightElement(block);
             });
         }
 
-        // Main application function
         function startApp() {
             const params = new URLSearchParams(window.location.search);
             const url = params.get('url');
@@ -210,7 +267,6 @@
             }
         }
 
-        // Function to load markdown
         async function loadMarkdown(url) {
             const loading = document.getElementById('loading');
             const error = document.getElementById('error');
@@ -226,7 +282,6 @@
                 const text = await response.text();
                 markdownContent.innerHTML = marked.parse(text);
                 
-                // Enhance code blocks
                 enhanceCodeBlocks();
                 
                 markdownContainer.classList.remove('hidden');
@@ -240,7 +295,6 @@
             }
         }
 
-        // Initialize when all scripts are loaded
         if (typeof hljs !== 'undefined' && typeof marked !== 'undefined') {
             initHighlightJS();
         } else {
